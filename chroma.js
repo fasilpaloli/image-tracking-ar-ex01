@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     video.pause();
     const texture = new THREE.VideoTexture(video);
 
-    const geometry = new THREE.PlaneGeometry(1, 1080/1920);
+    const geometry = new THREE.PlaneGeometry(1, 2160/3840);
     //const material = new THREE.MeshBasicMaterial({map: texture});
     const material = createChromaMaterial(texture, 0x00ff00);
     const plane = new THREE.Mesh(geometry, material);
-    plane.rotation.x = Math.PI/2;
+    // plane.rotation.x = Math.PI/2;
     plane.position.y = 0.7;
     plane.scale.multiplyScalar(4);
 
