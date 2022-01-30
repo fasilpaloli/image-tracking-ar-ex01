@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textObj.visible = false;
     textElement.style.background = "#FFFFFF";
     textElement.style.padding = "20";
-    textElement.style.fontSize = "60px";
+    textElement.style.fontSize = "40px";
 
     const cssAnchor = mindarThree.addCSSAnchor(0);
     cssAnchor.group.add(textObj);
