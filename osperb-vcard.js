@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftIcon = new THREE.Mesh(iconGeometry, leftMaterial);
     const rightIcon = new THREE.Mesh(iconGeometry, rightMaterial);
 
-    const portfolioItem0Video = await loadVideo("./assets/portfolio/portfolio/paintandquest.mp4");
-    portfolioItem0Video.muted = true;
-    const portfolioItem0VideoTexture = new THREE.VideoTexture(portfolioItem0Video);
-    const portfolioItem0VideoMaterial = new THREE.MeshBasicMaterial({map: portfolioItem0VideoTexture});
-    const portfolioItem0Material = new THREE.MeshBasicMaterial({map: portfolioItem0Texture});
-    const portfolioItem1Material = new THREE.MeshBasicMaterial({map: portfolioItem1Texture});
-    const portfolioItem2Material = new THREE.MeshBasicMaterial({map: portfolioItem2Texture});
+    // const portfolioItem0Video = await loadVideo("./assets/portfolio/portfolio/paintandquest.mp4");
+    // portfolioItem0Video.muted = true;
+    // const portfolioItem0VideoTexture = new THREE.VideoTexture(portfolioItem0Video);
+    // const portfolioItem0VideoMaterial = new THREE.MeshBasicMaterial({map: portfolioItem0VideoTexture});
+    // const portfolioItem0Material = new THREE.MeshBasicMaterial({map: portfolioItem0Texture});
+    // const portfolioItem1Material = new THREE.MeshBasicMaterial({map: portfolioItem1Texture});
+    // const portfolioItem2Material = new THREE.MeshBasicMaterial({map: portfolioItem2Texture});
 
     //osperb web examples material
     const web01Material = new THREE.MeshBasicMaterial({map: web01Texture});
@@ -102,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const web08Material = new THREE.MeshBasicMaterial({map: web08Texture});
     const web09Material = new THREE.MeshBasicMaterial({map: web09Texture});
 
-    const portfolioItem0V = new THREE.Mesh(planeGeometry, portfolioItem0VideoMaterial); 
-    const portfolioItem0 = new THREE.Mesh(planeGeometry, portfolioItem0Material); 
-    const portfolioItem1 = new THREE.Mesh(planeGeometry, portfolioItem1Material); 
-    const portfolioItem2 = new THREE.Mesh(planeGeometry, portfolioItem2Material); 
+    // const portfolioItem0V = new THREE.Mesh(planeGeometry, portfolioItem0VideoMaterial); 
+    // const portfolioItem0 = new THREE.Mesh(planeGeometry, portfolioItem0Material); 
+    // const portfolioItem1 = new THREE.Mesh(planeGeometry, portfolioItem1Material); 
+    // const portfolioItem2 = new THREE.Mesh(planeGeometry, portfolioItem2Material); 
 
     //osperb web examples item
     const web01 = new THREE.Mesh(planeGeometry, web01Material); 
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
     leftIcon.position.set(-0.7, 0, 0);
     rightIcon.position.set(0.7, 0, 0);
 
-    const avatar = await loadGLTF('./assets/models/softmind/scene.gltf');
-    avatar.scene.scale.set(0.004, 0.004, 0.004);
-    avatar.scene.position.set(0, -0.25, -0.3);
+    // const avatar = await loadGLTF('./assets/models/softmind/scene.gltf');
+    // avatar.scene.scale.set(0.004, 0.004, 0.004);
+    // avatar.scene.position.set(0, -0.25, -0.3);
 
     const anchor = mindarThree.addAnchor(0);
     // anchor.group.add(avatar.scene);
@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     webIcon.userData.clickable = true;
     profileIcon.userData.clickable = true;
     locationIcon.userData.clickable = true;
-    portfolioItem0.userData.clickable = true;
-    portfolioItem0V.userData.clickable = true;
+    // portfolioItem0.userData.clickable = true;
+    // portfolioItem0V.userData.clickable = true;
 
     const portfolioItems = [web01, web02, web03, web04, web05, web06, web07, web08, web09]; 
     let currentPortfolio = 0;
@@ -195,17 +195,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	      portfolioGroup.remove(portfolioItems[i]);
 	    }
 	    portfolioGroup.add(portfolioItems[currentPortfolio]);
-	  } else if (o === portfolioItem0) {
-	    portfolioGroup.remove(portfolioItem0);
-	    portfolioGroup.add(portfolioItem0V);
-	    portfolioItems[0] = portfolioItem0V;
-	    portfolioItem0Video.play();
-	  } else if (o === portfolioItem0V) {
-	    if (portfolioItem0Video.paused) {
-	      portfolioItem0Video.play();
-	    } else {
-	      portfolioItem0Video.pause();
-	    }
+	  // } else if (o === portfolioItem0) {
+	  //   portfolioGroup.remove(portfolioItem0);
+	  //   portfolioGroup.add(portfolioItem0V);
+	  //   portfolioItems[0] = portfolioItem0V;
+	  //   portfolioItem0Video.play();
+	  // } else if (o === portfolioItem0V) {
+	  //   if (portfolioItem0Video.paused) {
+	  //     portfolioItem0Video.play();
+	  //   } else {
+	  //     portfolioItem0Video.pause();
+	  //   }
 	  } else if (o === webIcon) {
 	    textObj.visible = true;
 	    textElement.innerHTML = "www.osperb.com";
@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	icon.scale.set(iconScale, iconScale, iconScale);
       });
 
-      const avatarZ = Math.min(0.3, -0.3 + elapsed * 0.5);
-      avatar.scene.position.set(0, -0.25, avatarZ);
+      // const avatarZ = Math.min(0.3, -0.3 + elapsed * 0.5);
+      // avatar.scene.position.set(0, -0.25, avatarZ);
 
       renderer.render(scene, camera);
       cssRenderer.render(cssScene, camera);
