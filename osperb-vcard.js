@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       './osperb/web/web09.jpg',
     ]);
 
-    const planeGeometry = new THREE.PlaneGeometry(1, 0.552);
+    const planeGeometry = new THREE.PlaneGeometry(1, 0.574);
     const cardMaterial = new THREE.MeshBasicMaterial({map: cardTexture});
     const card = new THREE.Mesh(planeGeometry, cardMaterial);
 
-    const iconGeometry = new THREE.CircleGeometry(0.075, 32);
+    const iconGeometry = new THREE.CircleGeometry(0.055, 32);
     const emailMaterial = new THREE.MeshBasicMaterial({map: emailTexture});
     const webMaterial = new THREE.MeshBasicMaterial({map: webTexture});
     const profileMaterial = new THREE.MeshBasicMaterial({map: profileTexture});
